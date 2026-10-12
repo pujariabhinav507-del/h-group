@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>H Group Fitness Hub | Premium Gym</title>
+<meta name="description" content="H Group Fitness Hub - modern gym, expert trainers, transformation programs. Join today via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0b;--bg2:#131316;--card:#18181c;--tx:#f4f4f5;--mut:#a1a1aa;--ac:#ff3b2f;--ac2:#ff8a00;--wa:#25d366;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;text-transform:uppercase;line-height:1.05;letter-spacing:.5px}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1180px;margin:auto;padding:0 20px}
+section{padding:90px 0}
+.tag{color:var(--ac);font-weight:600;letter-spacing:3px;font-size:.8rem;text-transform:uppercase}
+h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:8px 0 14px}
+.sub{color:var(--mut);max-width:600px}
+.grad{background:linear-gradient(90deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:50px;font-weight:600;border:0;cursor:pointer;font-size:1rem;transition:.25s;font-family:inherit}
+.btn-p{background:linear-gradient(90deg,var(--ac),var(--ac2));color:#fff;box-shadow:0 8px 30px rgba(255,59,47,.35)}
+.btn-p:hover{transform:translateY(-3px)}
+.btn-o{border:1.5px solid #3f3f46;background:transparent;color:var(--tx)}
+.btn-o:hover{border-color:var(--ac);color:var(--ac)}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:.3s;padding:16px 0}
+nav.sc{background:rgba(10,10,11,.92);backdrop-filter:blur(12px);padding:10px 0;box-shadow:0 2px 20px #0008}
+nav .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'Barlow Condensed';font-size:1.7rem;font-weight:800;letter-spacing:1px}
+.logo b{color:var(--ac)}
+.links{display:flex;gap:26px;align-items:center}
+.links a{font-size:.92rem;color:var(--mut);transition:.2s}
+.links a:hover{color:#fff}
+.burger{display:none;background:none;border:0;color:#fff;font-size:1.8rem;cursor:pointer}
+/* hero */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:90px;background:radial-gradient(900px 500px at 80% 20%,#ff3b2f33,transparent),radial-gradient(700px 500px at 10% 90%,#ff8a0022,transparent),var(--bg)}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.28}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#0a0a0b55,var(--bg))}
+.hero .wrap{position:relative;z-index:2}
+.hero h1{font-size:clamp(3.2rem,10vw,7.5rem);font-weight:800;margin:14px 0 18px}
+.hero p{color:#d4d4d8;max-width:560px;font-size:1.1rem;margin-bottom:30px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.pill{display:inline-block;border:1px solid #ffffff30;padding:6px 16px;border-radius:50px;font-size:.82rem;backdrop-filter:blur(6px)}
+/* stats */
+.stats{background:var(--bg2);padding:46px 0;border-block:1px solid #ffffff10}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stats h3{font-size:3rem;color:var(--ac)}
+.stats span{color:var(--mut);font-size:.9rem}
+/* cards */
+.grid{display:grid;gap:22px;margin-top:44px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid #ffffff10;border-radius:var(--r);padding:30px;transition:.3s}
+.card:hover{transform:translateY(-8px);border-color:var(--ac);box-shadow:0 20px 50px #ff3b2f22}
+.card .ic{font-size:2.2rem;margin-bottom:12px}
+.card h3{font-size:1.7rem;margin-bottom:6px}
+.card p{color:var(--mut);font-size:.95rem}
+/* about */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.about .ph{border-radius:var(--r);aspect-ratio:4/5;overflow:hidden;position:relative}
+.ticks{list-style:none;margin-top:20px}
+.ticks li{padding:6px 0;color:#d4d4d8}
+.ticks li::before{content:'✔';color:var(--ac);margin-right:10px}
+/* image fallback */
+.ph{background:linear-gradient(135deg,#27272a,#18181c)}
+.ph img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.ph:hover img{transform:scale(1.07)}
+/* pricing */
+.price{text-align:center;position:relative}
+.price.pop{border-color:var(--ac);background:linear-gradient(180deg,#ff3b2f18,var(--card))}
+.price .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--ac);padding:3px 16px;border-radius:50px;font-size:.75rem;font-weight:600}
+.price .amt{font-family:'Barlow Condensed';font-size:3.4rem;font-weight:800;margin:10px 0}
+.price .amt small{font-size:1rem;color:var(--mut);font-weight:400}
+.price ul{list-style:none;margin:16px 0 24px;text-align:left}
+.price li{padding:5px 0;color:var(--mut);font-size:.93rem;border-bottom:1px dashed #ffffff12}
+.price li::before{content:'✓ ';color:var(--ac)}
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:44px}
+.gal .ph{aspect-ratio:1;border-radius:14px;overflow:hidden;cursor:zoom-in}
+.lb{position:fixed;inset:0;background:#000d;z-index:99;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-height:90vh;border-radius:12px}
+/* testimonials */
+.rev .stars{color:#fbbf24;letter-spacing:2px;margin-bottom:10px}
+.rev p{font-style:italic}
+.rev b{display:block;margin-top:14px;font-size:.9rem}
+/* form */
+.join{background:linear-gradient(135deg,#ff3b2f18,#ff8a0010),var(--bg2)}
+.formbox{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+form{background:var(--card);padding:34px;border-radius:var(--r);border:1px solid #ffffff12;display:grid;gap:14px}
+input,select,textarea{width:100%;padding:14px 16px;background:#0f0f12;border:1px solid #2e2e35;border-radius:12px;color:#fff;font:inherit}
+input:focus,select:focus,textarea:focus{outline:0;border-color:var(--ac)}
+form .btn{background:var(--wa);justify-content:center;color:#052e16;font-weight:700;box-shadow:0 8px 30px #25d36640}
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;margin-top:44px}
+.info div{display:flex;gap:14px;margin-bottom:22px}
+.info .ic{font-size:1.5rem}
+.info b{display:block}
+.info span{color:var(--mut)}
+iframe{width:100%;height:100%;min-height:360px;border:0;border-radius:var(--r);filter:grayscale(.6) invert(.9) contrast(.9)}
+footer{border-top:1px solid #ffffff10;padding:30px 0;text-align:center;color:var(--mut);font-size:.88rem}
+.fab{position:fixed;right:20px;bottom:20px;z-index:60;width:62px;height:62px;border-radius:50%;background:var(--wa);display:grid;place-items:center;font-size:1.9rem;box-shadow:0 8px 30px #25d366aa;animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #25d366aa}70%{box-shadow:0 0 0 18px #25d36600}100%{box-shadow:0 0 0 0 #25d36600}}
+.rv{opacity:0;transform:translateY(40px);transition:1s}
+.rv.in{opacity:1;transform:none}
+@media(max-width:820px){
+ .links{position:fixed;inset:0 0 0 30%;background:#0a0a0bf5;flex-direction:column;justify-content:center;transform:translateX(100%);transition:.35s}
+ .links.open{transform:none}
+ .burger{display:block;z-index:70}
+ .about,.formbox,.contact{grid-template-columns:1fr}
+ .stats .wrap{grid-template-columns:repeat(2,1fr)}
+ section{padding:64px 0}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <a href="#home" class="logo" id="logo"></a>
+  <div class="links" id="links">
+    <a href="#about">About</a><a href="#programs">Programs</a><a href="#pricing">Plans</a>
+    <a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+    <a href="#join" class="btn btn-p" style="padding:10px 22px">Join Now</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+</div></nav>
+
+<header class="hero" id="home">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="wrap">
+    <span class="pill" id="heroPill"></span>
+    <h1>Forge <span class="grad">Stronger.</span><br>Live Better.</h1>
+    <p id="heroSub"></p>
+    <div class="cta">
+      <a href="#join" class="btn btn-p">🔥 Start Your Journey</a>
+      <a id="waHero" class="btn btn-o" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats"><div class="wrap" id="stats"></div></div>
+
+<section id="about"><div class="wrap about">
+  <div class="ph rv" id="aboutImg"></div>
+  <div class="rv">
+    <span class="tag">About Us</span>
+    <h2 id="aboutTitle"></h2>
+    <p class="sub" id="aboutText"></p>
+    <ul class="ticks" id="ticks"></ul>
+  </div>
+</div></section>
+
+<section id="programs" style="background:var(--bg2)"><div class="wrap">
+  <span class="tag">What We Offer</span><h2>Programs & <span class="grad">Facilities</span></h2>
+  <p class="sub">Everything you need under one roof.</p>
+  <div class="grid g3" id="programsGrid"></div>
+</div></section>
+
+<section id="pricing"><div class="wrap">
+  <span class="tag">Membership</span><h2>Choose Your <span class="grad">Plan</span></h2>
+  <p class="sub">Simple pricing. No hidden charges.</p>
+  <div class="grid g3" id="plans"></div>
+</div></section>
+
+<section id="gallery" style="background:var(--bg2)"><div class="wrap">
+  <span class="tag">Inside The Gym</span><h2>Our <span class="grad">Gallery</span></h2>
+  <div class="gal" id="gal"></div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+  <span class="tag">Testimonials</span><h2>Member <span class="grad">Stories</span></h2>
+  <div class="grid g3" id="revs"></div>
+</div></section>
+
+<section id="join" class="join"><div class="wrap formbox">
+  <div class="rv">
+    <span class="tag">Admission Open</span>
+    <h2>Take Admission in <span class="grad">60 Seconds</span></h2>
+    <p class="sub">Fill the form and it opens WhatsApp with your details pre-filled. Our team will confirm your slot instantly.</p>
+  </div>
+  <form id="form" class="rv">
+    <input id="fn" placeholder="Full Name" required>
+    <input id="fp" type="tel" placeholder="Phone Number" required pattern="[0-9+ ]{10,14}">
+    <input id="fa" type="number" placeholder="Age" min="12" max="80">
+    <select id="fplan"></select>
+    <select id="fgoal"><option>Weight Loss</option><option>Muscle Gain</option><option>General Fitness</option><option>Strength Training</option><option>Personal Training</option></select>
+    <textarea id="fm" rows="2" placeholder="Any message (optional)"></textarea>
+    <button class="btn" type="submit">💬 Send Admission Request on WhatsApp</button>
+  </form>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <span class="tag">Find Us</span><h2>Visit The <span class="grad">Gym</span></h2>
+  <div class="contact">
+    <div class="info" id="info"></div>
+    <iframe id="map" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div></section>
+
+<footer><div class="wrap" id="foot"></div></footer>
+<a id="fab" class="fab" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<div class="lb" id="lb"><img alt=""></div>
+
+<script>
+/* =====================================================
+   ✏️ EDIT ONLY THIS BLOCK — everything else updates itself
+   Put your photos in an "images" folder next to index.html
+   ===================================================== */
+const C = {
+  name: "H GROUP FITNESS HUB",
+  short: ["H GROUP", "FITNESS HUB"],       // logo (2 parts)
+  tagline: "Unisex Gym • Strength • Cardio • Transformation",
+  whatsapp: "917061551313",                 // country code + number, no + or spaces
+  phone: "+91 7061551313",
+  email: "hgroupfitness@gmail.com",
+  address: "H Group Fitness Hub, (paste full address from Google Maps)",
+  lat: 16.4248686, lng: 74.5842222,         // from your Google Maps link
+  mapsLink: "https://maps.app.goo.gl/kmNrt5k87KPWdnd8A",
+  instagram: "https://instagram.com/",
+  rating: "4.9",                            // paste real Google rating
+  timings: [["Mon – Sat","5:30 AM – 10:00 PM"],["Sunday","7:00 AM – 12:00 PM"]],
+  about: "H Group Fitness Hub is a modern gym built for people who are serious about change. With quality equipment, certified trainers and a motivating atmosphere, we help beginners and athletes alike reach their goals.",
+  points: ["Fully equipped modern gym","Certified & experienced trainers","Clean, hygienic & spacious floor","Personalised diet & workout guidance"],
+  stats: [["500+","Happy Members"],["10+","Expert Trainers"],["5+","Years Experience"],["4.9★","Google Rating"]],
+  programs: [
+    ["🏋️","Weight Training","Free weights, racks and plate-loaded machines for serious strength."],
+    ["🏃","Cardio Zone","Treadmills, cycles, cross-trainers to burn fat and boost stamina."],
+    ["🔥","Fat Loss Program","Structured workouts and nutrition plans for visible results."],
+    ["💪","Muscle Building","Progressive hypertrophy programs by certified coaches."],
+    ["🧘","Yoga & Mobility","Flexibility, recovery and mind-body balance."],
+    ["🎯","Personal Training","1-on-1 coaching tailored to your body and goals."]
+  ],
+  plans: [
+    ["Monthly","₹1,000","/month",["Full gym access","Cardio + weights","Locker facility"],false],
+    ["Quarterly","₹3000","/3 months",["Everything in Monthly","Free diet chart","1 body assessment"],true],
+    ["Yearly","₹6000","/year",["Everything in Quarterly","Priority training slots","Free T-shirt"],false]
+  ],
+  reviews: [
+    ["Best gym in the area! Trainers are supportive and equipment is top class.","Rahul P."],
+    ["Lost 12 kg in 4 months. The guidance and atmosphere are amazing.","Sneha K."],
+    ["Clean, spacious and always motivating. Highly recommended!","Amit S."]
+  ],
+  // 📸 Download photos from Google Maps → save in /images with these names
+  hero: "images/hero.jpg",
+  aboutImg: "images/about.jpg",
+  gallery: ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg","images/6.jpg"]
+};
+
+/* ---------- renderer ---------- */
+const $=id=>document.getElementById(id);
+const wa=(t="Hi! I want to know about gym admission.")=>`https://wa.me/${C.whatsapp}?text=${encodeURIComponent(t)}`;
+document.title=C.name+" | Premium Gym";
+$('logo').innerHTML=`${C.short[0]} <b>${C.short[1]}</b>`;
+$('heroPill').textContent="⭐ "+C.rating+" Google Rating  •  "+C.tagline;
+$('heroSub').textContent=C.about.split('.')[0]+". Join the community that pushes you further.";
+$('heroBg').style.backgroundImage=`url(${C.hero})`;
+$('waHero').href=wa(); $('fab').href=wa();
+$('aboutTitle').innerHTML=`Why <span class="grad">${C.short[0]}</span>?`;
+$('aboutText').textContent=C.about;
+$('ticks').innerHTML=C.points.map(p=>`<li>${p}</li>`).join('');
+$('aboutImg').innerHTML=`<img src="${C.aboutImg}" alt="${C.name}" onerror="this.remove()">`;
+$('stats').innerHTML=C.stats.map(s=>`<div class="rv"><h3>${s[0]}</h3><span>${s[1]}</span></div>`).join('');
+$('programsGrid').innerHTML=C.programs.map(p=>`<div class="card rv"><div class="ic">${p[0]}</div><h3>${p[1]}</h3><p>${p[2]}</p></div>`).join('');
+$('plans').innerHTML=C.plans.map(p=>`<div class="card price rv ${p[4]?'pop':''}">${p[4]?'<div class="badge">MOST POPULAR</div>':''}<h3>${p[0]}</h3><div class="amt">${p[1]}<small> ${p[2]}</small></div><ul>${p[3].map(x=>`<li>${x}</li>`).join('')}</ul><a class="btn btn-p" target="_blank" rel="noopener" href="${wa('Hi! I want to join the '+p[0]+' plan at '+C.name)}">Join ${p[0]}</a></div>`).join('');
+$('fplan').innerHTML=C.plans.map(p=>`<option>${p[0]} – ${p[1]}</option>`).join('');
+$('gal').innerHTML=C.gallery.map(g=>`<div class="ph rv"><img src="${g}" loading="lazy" alt="${C.name} gallery" onerror="this.parentNode.style.display='none'"></div>`).join('');
+$('revs').innerHTML=C.reviews.map(r=>`<div class="card rev rv"><div class="stars">★★★★★</div><p>“${r[0]}”</p><b>— ${r[1]}</b></div>`).join('');
+$('info').innerHTML=`
+ <div><span class="ic">📍</span><p><b>Address</b><span>${C.address}</span></p></div>
+ <div><span class="ic">📞</span><p><b>Call</b><a href="tel:${C.phone.replace(/\s/g,'')}"><span>${C.phone}</span></a></p></div>
+ <div><span class="ic">✉️</span><p><b>Email</b><span>${C.email}</span></p></div>
+ <div><span class="ic">🕒</span><p><b>Timings</b>${C.timings.map(t=>`<span>${t[0]}: ${t[1]}</span><br>`).join('')}</p></div>
+ <a class="btn btn-o" target="_blank" rel="noopener" href="${C.mapsLink}">🧭 Get Directions</a>`;
+$('map').src=`https://maps.google.com/maps?q=${C.lat},${C.lng}&z=17&output=embed`;
+$('foot').innerHTML=`© ${new Date().getFullYear()} ${C.name}. All rights reserved. • <a href="${C.instagram}" target="_blank" rel="noopener">Instagram</a>`;
+
+/* admission form → WhatsApp */
+$('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const m=`🏋️ *New Admission Request*\n\n*Name:* ${$('fn').value}\n*Phone:* ${$('fp').value}\n*Age:* ${$('fa').value||'-'}\n*Plan:* ${$('fplan').value}\n*Goal:* ${$('fgoal').value}\n*Message:* ${$('fm').value||'-'}`;
+  window.open(wa(m),'_blank');
+});
+
+/* nav, burger, lightbox, scroll reveal */
+addEventListener('scroll',()=>$('nav').classList.toggle('sc',scrollY>40));
+$('burger').onclick=()=>$('links').classList.toggle('open');
+$('links').onclick=()=>$('links').classList.remove('open');
+const lb=$('lb');
+$('gal').addEventListener('click',e=>{const i=e.target.closest('.ph')?.querySelector('img');if(i){lb.querySelector('img').src=i.src;lb.classList.add('on')}});
+lb.onclick=()=>lb.classList.remove('on');
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
